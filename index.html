@@ -8,61 +8,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <!-- Place favicon.ico in the root directory -->
-    <!-- Work Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- /Work Sans -->
-    <!-- link rel="preconnect" href="https://fonts.googleapis.com" -->
-    <!-- link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /-->
-    <!-- Noto Sans -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- /Noto Sans -->
     <style>
       :root {
-        --unit: 1vw;
-        --fs-small: calc(1 * var(--unit));
-        --fs-normal: calc(1.4 * var(--unit));
-        --fs-large: calc(1.8 * var(--unit));
-        --fs-headline: calc(1.8 * var(--unit));
         scroll-behavior: smooth;
-        font-family: "Work Sans", sans-serif;
-        font-size: var(--fs-normal);
+        font-family: Arial, sans-serif;
+        /* HACK:
+           font-size on root element sets the rem unit.
+           now everything defined in rem will auto-scale with the
+           browser window.
+        /*/
+        /* font-size: 2vw; */
       }
       body {
         margin: 0;
       }
+      img {
+        max-width: 100%;
+      }
       h1 {
         font-size: inherit;
         font-weight: normal;
-      }
-      nav {
-        position: fixed;
-        padding: calc(0.5 * var(--unit)) calc(1 * var(--unit));
-      }
-      nav h1,
-      nav ol,
-      nav li {
-        display: inline;
-      }
-      nav li:before {
-        content: "#";
-        color: transparent;
-        transition: color 0.2s;
-      }
-      nav li:hover,
-      nav li:hover:before,
-      nav li.active,
-      h1.active,
-      a:hover {
-        color: teal;
       }
       a {
         color: inherit;
@@ -70,23 +35,12 @@
         transition: color 0.2s;
       }
       h2 {
-        position: absolute;
-        top: 0;
-        left: calc(1 * var(--unit));
-        font-size: var(--fs-headline);
+        font-size: 1.8rem;
         text-transform: uppercase;
         font-weight: normal;
-        height: calc(100% - 10 * var(--unit));
-      }
-      h2 .sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        top: calc(4 * var(--unit));
-        transform: rotate(-90deg) translateX(-100%);
-        transform-origin: 0% 0%;
       }
       h3 {
-        font-size: var(--fs-large);
+        font-size: 1.8rem;
       }
       section {
         position: relative;
@@ -113,45 +67,23 @@
       section .arrow-down a:hover {
         color: black;
       }
-      #profile {
-        font-size: var(--fs-large);
+      #profile .card {
+        display: flex;
+        gap: 2rem;
+        width: 60rem;
+        margin: 0 auto;
+        box-shadow: yellow -2rem -2rem;
       }
-      .emoji {
-        display: inline-block;
-        font-size: 2em;
-        width: 0.5em;
-        height: 0.5em;
-        transform: rotate(-12deg);
+      #profile .card img {
+        box-sizing: border-box;
+        width: 24rem;
       }
-      a .emoji {
-        animation: bounce 1.2s ease-in-out 1;
-      }
-      .ff-noto {
-        font-family:
-          "Noto Sans", Helvetica, "Helvetica Neue", Arial, Verdana, sans-serif;
-      }
-      @keyframes bounce {
-        0% {
-          scale: 1;
-          rotate: 0deg;
-        }
-
-        50% {
-          scale: 2;
-          rotate: -180deg;
-        }
-
-        100% {
-          scale: 1;
-          rotate: -360deg;
-        }
-      }
-      dl {
-        display: grid;
-        grid-template-columns: min-content auto;
-      }
-      dt {
+      #profile .card h1 {
+        margin: 1rem 0;
+        font-size: 4rem;
         font-weight: bold;
+        letter-spacing: -0.02em;
+        font-family: Times New Roman;
       }
     </style>
   </head>
@@ -163,49 +95,27 @@
         your experience.
       </p>
     <![endif]-->
-    <nav>
-      <h1><a href="#profile">Emanuel Tannert</a></h1>
-      <!--ol>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#cv">CV</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ol-->
-    </nav>
     <main>
-      <section id="profile" style="background-color: Gainsboro">
-        <h2><div class="sticky">Profile</div></h2>
-        <div class="body">
-          <img src="Emanuel.jpg" />
-          <p
-            class="ff-noto"
-            style="font-size: 3rem; font-weight: 900; letter-spacing: -0.02em"
-          >
-            Hi, I'm Emanuel.<br /><br />
-            I'm an experienced software engineer with a knack for design.
-          </p>
-          <p>I am currently looking for work. Freelance or hire me?</p>
-          <p>
-            <a href="#contact">
-              <span class="emoji" style="margin-right: calc(1 * var(--unit))"
-                >📧</span
-              >
-              Shoot me a message!
-            </a>
-          </p>
+      <section id="profile">
+        <div class="card" style="background-color: violet">
+          <div>
+            <img src="emanuel.jpg" alt="Emanuel's portrait" />
+          </div>
+          <div>
+            <h1>Emanuel Tannert</h1>
+            <p>Web Developer | Frontend, UX, CMS, Administration</p>
+          </div>
         </div>
-        <div class="arrow-down"><a href="#skills">↓</a></div>
+        <p>
+          <a href="#contact">
+            <span class="emoji" style="margin-right: calc(1 * var(--unit))"
+              >📧</span
+            >
+            Message me
+          </a>
+        </p>
       </section>
       <section id="skills">
-        <h2><div class="sticky">Skills</div></h2>
         <div class="body">
           <ol>
             <li>
@@ -255,7 +165,6 @@
         </div>
       </section>
       <section id="projects">
-        <h2><div class="sticky">Projects</div></h2>
         <div class="body">
           <ol>
             <li>
@@ -343,18 +252,15 @@
         </div>
       </section>
       <section id="cv">
-        <h2><div class="sticky">CV</div></h2>
         <div class="body"></div>
       </section>
       <section id="contact">
         <div class="body">
-          <h2><div class="sticky">Contact</div></h2>
           <p>Please email me at <a>hi (at) emanueltannert (dot) com</a></p>
         </div>
       </section>
       <section id="legal">
         <div class="body">
-          <h2 class="small">The Fineprint</h2>
           <p>
             Emanuel Tannert<br />
             Schreyerstraße 23<br />
@@ -363,33 +269,5 @@
         </div>
       </section>
     </main>
-    <script>
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav a");
-
-      let activeFragment = window.location.href.split("#")[1];
-
-      function setCurrentSectionNavItemActive() {
-        let activeSection;
-        for (let i = 0; i < sections.length; i++) {
-          const boundingClientRect = sections[i].getBoundingClientRect();
-          if (boundingClientRect.top <= 0 && boundingClientRect.bottom > 0) {
-            activeSection = sections[i];
-            break;
-          }
-        }
-        for (let i = 0; i < navLinks.length; i++) {
-          if (navLinks[i].getAttribute("href") === `#${activeSection?.id}`) {
-            navLinks[i].parentElement.classList.add("active");
-          } else {
-            navLinks[i].parentElement.classList.remove("active");
-          }
-        }
-      }
-
-      document.addEventListener("scroll", setCurrentSectionNavItemActive);
-
-      setCurrentSectionNavItemActive();
-    </script>
   </body>
 </html>
