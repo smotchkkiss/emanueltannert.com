@@ -1,0 +1,395 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Emanuel Tannert | Full Stack Software Engineer</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- Work Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- /Work Sans -->
+    <!-- link rel="preconnect" href="https://fonts.googleapis.com" -->
+    <!-- link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /-->
+    <!-- Noto Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- /Noto Sans -->
+    <style>
+      :root {
+        --unit: 1vw;
+        --fs-small: calc(1 * var(--unit));
+        --fs-normal: calc(1.4 * var(--unit));
+        --fs-large: calc(1.8 * var(--unit));
+        --fs-headline: calc(1.8 * var(--unit));
+        scroll-behavior: smooth;
+        font-family: "Work Sans", sans-serif;
+        font-size: var(--fs-normal);
+      }
+      body {
+        margin: 0;
+      }
+      h1 {
+        font-size: inherit;
+        font-weight: normal;
+      }
+      nav {
+        position: fixed;
+        padding: calc(0.5 * var(--unit)) calc(1 * var(--unit));
+      }
+      nav h1,
+      nav ol,
+      nav li {
+        display: inline;
+      }
+      nav li:before {
+        content: "#";
+        color: transparent;
+        transition: color 0.2s;
+      }
+      nav li:hover,
+      nav li:hover:before,
+      nav li.active,
+      h1.active,
+      a:hover {
+        color: teal;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      h2 {
+        position: absolute;
+        top: 0;
+        left: calc(1 * var(--unit));
+        font-size: var(--fs-headline);
+        text-transform: uppercase;
+        font-weight: normal;
+        height: calc(100% - 10 * var(--unit));
+      }
+      h2 .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: calc(4 * var(--unit));
+        transform: rotate(-90deg) translateX(-100%);
+        transform-origin: 0% 0%;
+      }
+      h3 {
+        font-size: var(--fs-large);
+      }
+      section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      section .body {
+        padding: calc(2 * var(--unit)) calc(1 * var(--unit));
+        width: 66.667%;
+      }
+      section .arrow-down {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+      section .arrow-down a {
+        display: block;
+        padding: 0.5em;
+        text-align: center;
+        color: gray;
+      }
+      section .arrow-down a:hover {
+        color: black;
+      }
+      #profile {
+        font-size: var(--fs-large);
+      }
+      .emoji {
+        display: inline-block;
+        font-size: 2em;
+        width: 0.5em;
+        height: 0.5em;
+        transform: rotate(-12deg);
+      }
+      a .emoji {
+        animation: bounce 1.2s ease-in-out 1;
+      }
+      .ff-noto {
+        font-family:
+          "Noto Sans", Helvetica, "Helvetica Neue", Arial, Verdana, sans-serif;
+      }
+      @keyframes bounce {
+        0% {
+          scale: 1;
+          rotate: 0deg;
+        }
+
+        50% {
+          scale: 2;
+          rotate: -180deg;
+        }
+
+        100% {
+          scale: 1;
+          rotate: -360deg;
+        }
+      }
+      dl {
+        display: grid;
+        grid-template-columns: min-content auto;
+      }
+      dt {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    <nav>
+      <h1><a href="#profile">Emanuel Tannert</a></h1>
+      <!--ol>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#cv">CV</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ol-->
+    </nav>
+    <main>
+      <section id="profile" style="background-color: Gainsboro">
+        <h2><div class="sticky">Profile</div></h2>
+        <div class="body">
+          <img src="Emanuel.jpg" />
+          <p
+            class="ff-noto"
+            style="font-size: 3rem; font-weight: 900; letter-spacing: -0.02em"
+          >
+            Hi, I'm Emanuel.<br /><br />
+            I'm an experienced software engineer with a knack for design.
+          </p>
+          <p>I am currently looking for work. Freelance or hire me?</p>
+          <p>
+            <a href="#contact">
+              <span class="emoji" style="margin-right: calc(1 * var(--unit))"
+                >📧</span
+              >
+              Shoot me a message!
+            </a>
+          </p>
+        </div>
+        <div class="arrow-down"><a href="#skills">↓</a></div>
+      </section>
+      <section id="skills">
+        <h2><div class="sticky">Skills</div></h2>
+        <div class="body">
+          <ol>
+            <li>
+              <h3>Frontend & UX</h3>
+              <p>
+                Arguably my strongest point. I recently worked on a few projects
+                with
+                <span class="technology">Angular</span>,
+                <span>TypeScript</span>, <span>SCSS</span> and(!)
+                <span>Tailwind</span>, and have collaborated closely with
+                designers and artists for my whole career.
+              </p>
+              <p>
+                I also built the occasional React or Vue site and I can do
+                vanilla HTML, CSS and JavaScript, too.
+              </p>
+              <p>Gulp, Webpack, esbuild, SASS, I used them all ...</p>
+            </li>
+            <li>
+              <h3>Backend & Linux</h3>
+              <p>
+                I have experience with Node.js, Express, Python, Flask,
+                SQLAlchemy, PHP and MySQL/MariaDB. I even worked as a
+                (small-scale) Linux sysadmin for a while, juggling nginx, Apache
+                php-fpm, MySQL, MariaDB and PostgreSQL configs, systemd units
+                and the odd ansible script.
+              </p>
+            </li>
+            <li>
+              <h3>Language & Communication</h3>
+              <p>
+                I'm fluent in english and native in german. I'm used to document
+                and communicate about my work in written form.
+              </p>
+            </li>
+            <li>
+              <h3>Learning & Teaching</h3>
+              <p>
+                I love to go through tutorials, docs, manuals or source code and
+                find out how a thing works. I've tried almost every programming
+                language even though I'm not proficient in all of them. I also
+                love to explain stuff to others, even though I didn't have much
+                chance for that recently.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="projects">
+        <h2><div class="sticky">Projects</div></h2>
+        <div class="body">
+          <ol>
+            <li>
+              <h3>MYSTERY PROJECT</h3>
+              <dl>
+                <dt>Owner:</dt>
+                <dd>Tick-TS</dd>
+                <dt>Design:</dt>
+                <dd>zigzag</dd>
+                <dt>Frontend:</dt>
+                <dd>Ionic, Angular, Tailwind</dd>
+                <dt>Backend:</dt>
+                <dd>Java</dd>
+                <dt>Time:</dt>
+                <dd>??/2024–03/2025</dd>
+              </dl>
+              <p>
+                Advanced Angular 16 app written against a custom Java backend.
+                Can't talk about many details for this one; the main part was a
+                completely user-configured widget area. Custom Java Backend. I
+                contributed to the frontend and communicated with design.
+              </p>
+            </li>
+            <li>
+              <h3>nextmuseum.io</h3>
+              <dl>
+                <dt>Owner:</dt>
+                <dd>Museum Ulm, Kunststiftung NRW oder wie die heißen</dd>
+                <dt>Design:</dt>
+                <dd>Future Forms</dd>
+                <dt>Frontend:</dt>
+                <dd>Angular, Tailwind</dd>
+                <dt>Backend:</dt>
+                <dd>Supabase</dd>
+                <dt>Time:</dt>
+                <dd>10/2023–??/2024</dd>
+              </dl>
+              <p>
+                My first Angular project. It was open source on GitHub for a
+                while, but the owners took it private.
+              </p>
+            </li>
+            <li>
+              <h3>z-bau.com</h3>
+              <dl>
+                <dt>Owner:</dt>
+                <dd>Z-Bau</dd>
+                <dt>Design:</dt>
+                <dd>unfun</dd>
+                <dt>Frontend:</dt>
+                <dd>WordPress Template, CSS and Vanilla JS</dd>
+                <dt>Backend:</dt>
+                <dd>WordPress</dd>
+                <dt>Time:</dt>
+                <dd>2015–2024</dd>
+              </dl>
+              <p>
+                Love the brutalist design paying tribute to the Z-Bau as a
+                building. Maintained by me alone after my resignation from
+                unfun. Relaunched in 2025 by stefanendres.com and
+                menschmaschine.studio.
+              </p>
+            </li>
+            <li>
+              <h3>sophiaschulzmusic.com</h3>
+              <dl>
+                <dt>Owner:</dt>
+                <dd>Sophia Schulz</dd>
+                <dt>Design:</dt>
+                <dd>Complex Pleasures</dd>
+                <dt>Frontend:</dt>
+                <dd>WordPress Template, CSS and Vanilla JS</dd>
+                <dt>Backend:</dt>
+                <dd>WordPress</dd>
+                <dt>Time:</dt>
+                <dd>2023</dd>
+              </dl>
+              <p>Modern portfolio website for cellist Sophia Schulz</p>
+            </li>
+            <li>
+              <h3>emanueltannert.com</h3>
+              <p>Hey, I just made this website in 3 days. Cool, huh?</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section id="cv">
+        <h2><div class="sticky">CV</div></h2>
+        <div class="body"></div>
+      </section>
+      <section id="contact">
+        <div class="body">
+          <h2><div class="sticky">Contact</div></h2>
+          <p>Please email me at <a>hi (at) emanueltannert (dot) com</a></p>
+        </div>
+      </section>
+      <section id="legal">
+        <div class="body">
+          <h2 class="small">The Fineprint</h2>
+          <p>
+            Emanuel Tannert<br />
+            Schreyerstraße 23<br />
+            90443 Nürnberg
+          </p>
+        </div>
+      </section>
+    </main>
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav a");
+
+      let activeFragment = window.location.href.split("#")[1];
+
+      function setCurrentSectionNavItemActive() {
+        let activeSection;
+        for (let i = 0; i < sections.length; i++) {
+          const boundingClientRect = sections[i].getBoundingClientRect();
+          if (boundingClientRect.top <= 0 && boundingClientRect.bottom > 0) {
+            activeSection = sections[i];
+            break;
+          }
+        }
+        for (let i = 0; i < navLinks.length; i++) {
+          if (navLinks[i].getAttribute("href") === `#${activeSection?.id}`) {
+            navLinks[i].parentElement.classList.add("active");
+          } else {
+            navLinks[i].parentElement.classList.remove("active");
+          }
+        }
+      }
+
+      document.addEventListener("scroll", setCurrentSectionNavItemActive);
+
+      setCurrentSectionNavItemActive();
+    </script>
+  </body>
+</html>
