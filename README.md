@@ -1,2 +1,0 @@
-# emanueltannert.com
-personal website
