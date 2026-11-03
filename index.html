@@ -1,89 +1,201 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Emanuel Tannert | Full Stack Software Engineer</title>
+    <title>Emanuel Tannert | Frontend & UX Engineer</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!--link rel="apple-touch-icon" href="/apple-touch-icon.png" /-->
     <style>
       :root {
         scroll-behavior: smooth;
         font-family: Arial, sans-serif;
-        /* HACK:
-           font-size on root element sets the rem unit.
-           now everything defined in rem will auto-scale with the
-           browser window.
-        /*/
-        /* font-size: 2vw; */
+        font-size: 16px;
       }
       body {
-        margin: 0;
+        margin: 2rem;
+      }
+      main {
+        max-width: 42rem;
+        margin: 0 auto;
+      }
+      section {
+        clear: both;
+      }
+      section + section {
+        border-top: 2px solid black;
       }
       img {
         max-width: 100%;
       }
       h1 {
-        font-size: inherit;
-        font-weight: normal;
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+        text-decoration: underline;
+      }
+      h3 {
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+      #skills h2 {
+        color: purple;
+      }
+      #projects h2 {
+        color: darkblue;
+      }
+      #experience h2 {
+        color: darkgreen;
+      }
+      ul {
+        padding-left: 0;
+      }
+      ul li {
+        list-style: none;
+      }
+      .bullet-list,
+      .sub-list {
+        margin-left: 2rem;
+      }
+      .bullet-list li {
+        list-style-type: disc;
+      }
+      .bullet-list li + li,
+      .sub-list li + li {
+        margin-top: 0.25rem;
+      }
+      .circle-list > li {
+        list-style-type: circle;
+      }
+      .square-list > li {
+        list-style-type: square;
+      }
+      ol {
+        padding-left: 0;
       }
       a {
         color: inherit;
-        text-decoration: none;
         transition: color 0.2s;
       }
-      h2 {
-        font-size: 1.8rem;
-        text-transform: uppercase;
-        font-weight: normal;
+      a:hover {
+        color: blue;
       }
-      h3 {
-        font-size: 1.8rem;
+      h2 a:hover {
+        color: inherit;
       }
-      section {
-        position: relative;
+      .emoji-list {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        row-gap: 0.25rem;
+      }
+      .emoji-list li {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1 / -1;
+        align-items: baseline;
+      }
+      .emoji {
+        margin-right: 0.5rem;
+      }
+      .two-column-list {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
+        gap: 1.5rem;
       }
-      section .body {
-        padding: calc(2 * var(--unit)) calc(1 * var(--unit));
-        width: 66.667%;
+      .technology {
+        background-color: lightyellow;
       }
-      section .arrow-down {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+      .role {
+        background-color: cornsilk;
       }
-      section .arrow-down a {
-        display: block;
-        padding: 0.5em;
-        text-align: center;
-        color: gray;
+      .source {
+        background-color: lightcyan;
       }
-      section .arrow-down a:hover {
-        color: black;
+      #profile img {
+        width: 12rem;
+        float: left;
+        margin: 0 1rem 1rem 0;
       }
-      #profile .card {
-        display: flex;
-        gap: 2rem;
-        width: 60rem;
-        margin: 0 auto;
-        box-shadow: yellow -2rem -2rem;
+      #projects img {
+        border-left: 2px solid black;
       }
-      #profile .card img {
-        box-sizing: border-box;
-        width: 24rem;
+      address {
+        font-style: normal;
+        margin-top: 1rem;
       }
-      #profile .card h1 {
-        margin: 1rem 0;
-        font-size: 4rem;
-        font-weight: bold;
-        letter-spacing: -0.02em;
-        font-family: Times New Roman;
+      .toggle-list > li {
+        display: none;
+      }
+      .toggle-list > li:first-child {
+        display: list-item;
+      }
+      .toggle-on .toggle-list > li,
+      .no-js .toggle-list > li {
+        display: list-item;
+      }
+      .toggle-link > span {
+        color: blue;
+        font-style: italic;
+        display: none;
+      }
+      .toggle-link > span:first-child {
+        display: inline;
+      }
+      .toggle-on .toggle-link > span {
+        display: inline;
+      }
+      .toggle-on .toggle-link > span:first-child {
+        display: none;
+      }
+      .no-js .toggle-link {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          background: #141414;
+          color: #eee;
+        }
+        a:hover {
+          color: turquoise;
+        }
+        .toggle-link > span {
+          color: turquoise;
+        }
+        section + section {
+          border-top-color: #eee;
+        }
+        #skills h2 {
+          color: violet;
+        }
+        #projects h2 {
+          color: turquoise;
+        }
+        #experience h2 {
+          color: lightgreen;
+        }
+        #projects img {
+          border-left-color: #eee;
+        }
+        .technology {
+          background-color: khaki;
+          color: #141414;
+        }
+        .role {
+          background-color: violet;
+          color: #141414;
+        }
+        .source {
+          background-color: turquoise;
+          color: #141414;
+        }
+      }
+      @media (max-width: 539px) {
+        .two-column-list {
+          display: block;
+        }
       }
     </style>
   </head>
@@ -97,177 +209,399 @@
     <![endif]-->
     <main>
       <section id="profile">
-        <div class="card" style="background-color: violet">
-          <div>
-            <img src="emanuel.jpg" alt="Emanuel's portrait" />
-          </div>
-          <div>
-            <h1>Emanuel Tannert</h1>
-            <p>Web Developer | Frontend, UX, CMS, Administration</p>
-          </div>
-        </div>
-        <p>
-          <a href="#contact">
-            <span class="emoji" style="margin-right: calc(1 * var(--unit))"
-              >📧</span
-            >
-            Message me
-          </a>
-        </p>
+        <img src="emanuel.webp" alt="Emanuel's portrait" />
+        <h1>Emanuel Tannert</h1>
+        <p>Frontend & UX Engineer</p>
+        <ul>
+          <li>
+            <span class="emoji">📍</span>
+            Nürnberg, Germany
+          </li>
+          <li>
+            <span class="emoji">📧</span>
+            <a href="mailto:post@etannert.de">post@etannert.de</a>
+          </li>
+          <li>
+            <span class="emoji">📞</span>
+            <a href="tel:+4917682265557">+49.176.82265557</a>
+          </li>
+          <li>
+            <span class="emoji">🐙</span>
+            <a href="https://github.com/smotchkkiss">github.com/smotchkkiss</a>
+          </li>
+        </ul>
       </section>
       <section id="skills">
-        <div class="body">
-          <ol>
-            <li>
-              <h3>Frontend & UX</h3>
-              <p>
-                Arguably my strongest point. I recently worked on a few projects
-                with
-                <span class="technology">Angular</span>,
-                <span>TypeScript</span>, <span>SCSS</span> and(!)
-                <span>Tailwind</span>, and have collaborated closely with
-                designers and artists for my whole career.
-              </p>
-              <p>
-                I also built the occasional React or Vue site and I can do
-                vanilla HTML, CSS and JavaScript, too.
-              </p>
-              <p>Gulp, Webpack, esbuild, SASS, I used them all ...</p>
-            </li>
-            <li>
-              <h3>Backend & Linux</h3>
-              <p>
-                I have experience with Node.js, Express, Python, Flask,
-                SQLAlchemy, PHP and MySQL/MariaDB. I even worked as a
-                (small-scale) Linux sysadmin for a while, juggling nginx, Apache
-                php-fpm, MySQL, MariaDB and PostgreSQL configs, systemd units
-                and the odd ansible script.
-              </p>
-            </li>
-            <li>
-              <h3>Language & Communication</h3>
-              <p>
-                I'm fluent in english and native in german. I'm used to document
-                and communicate about my work in written form.
-              </p>
-            </li>
-            <li>
-              <h3>Learning & Teaching</h3>
-              <p>
-                I love to go through tutorials, docs, manuals or source code and
-                find out how a thing works. I've tried almost every programming
-                language even though I'm not proficient in all of them. I also
-                love to explain stuff to others, even though I didn't have much
-                chance for that recently.
-              </p>
-            </li>
-          </ol>
-        </div>
+        <h2><a href="javascript:toggle('skills');">Skills</a></h2>
+        <ul class="circle-list toggle-list">
+          <li>
+            <h3>Frontend & User Experience</h3>
+            <ul class="emoji-list">
+              <li>
+                <span
+                  class="emoji"
+                  style="font-size: 1.6rem; margin-left: 0.15rem"
+                  >⬡</span
+                >
+                <span>
+                  <span class="technology">Angular</span>,
+                  <span class="technology">TypeScript</span>,
+                  <span class="technology">SCSS</span>,
+                  <span class="technology">Tailwind</span>: My modern frontend
+                  stack.
+                </span>
+              </li>
+              <li>
+                <span class="emoji">🎨️</span>
+                <span>
+                  I have collaborated closely with
+                  <span class="role">designers</span>,
+                  <span class="role">artists</span> and
+                  <span class="role">product people</span> my whole career.<br />
+                  I speak their language and know how to build what they mean.
+                </span>
+              </li>
+              <li>
+                <span class="emoji">🍦</span>
+                <span>
+                  Vanilla <span class="technology">JS</span>,
+                  <span class="technology">CSS</span>,
+                  <span class="technology">HTML</span>: I grew up with and ❤️
+                  the web platform.
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>Backend & Operations</h3>
+            <p>
+              <span class="technology">Node.js</span>,
+              <span class="technology">Python</span> &
+              <span class="technology">PHP</span>.
+              <span class="technology">MySQL</span>/<span class="technology"
+                >MariaDB</span
+              >
+              & <span class="technology">SQLite</span>.
+              <span class="technology"><i>WordPress.</i></span
+              ><br />
+              Deployment, delivery & systems administration.
+              <span class="technology">Linux</span>.
+              <span class="technology">Shell</span>.
+            </p>
+          </li>
+          <li>
+            <h3>Language & Communication</h3>
+            <div class="two-column-list">
+              <ul>
+                <li><span class="emoji">️📣</span>Clear communicator</li>
+                <li>
+                  <span class="emoji">️📝</span>I enjoy documenting my work
+                </li>
+              </ul>
+              <ul>
+                <li><span class="emoji">🇩🇪</span>German: native</li>
+                <li><span class="emoji">🇬🇧</span>English: fluent</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h3>Learning & Teaching</h3>
+            <ul class="bullet-list">
+              <li>
+                Lifelong learner: I educate myself from
+                <span class="source">docs</span>, consult the
+                <span class="source">source</span>, or let the
+                <span class="source">AI</span> explain.
+              </li>
+              <li>
+                I also love to teach and have done so in
+                <span class="source">talks</span>,
+                <span class="source">workshops</span> and
+                <span class="source">seminars</span>.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          <a class="toggle-link" href="javascript:toggle('skills');"
+            >[<span>&hellip;</span><span>show less</span>]</a
+          >
+        </p>
       </section>
       <section id="projects">
-        <div class="body">
-          <ol>
-            <li>
-              <h3>MYSTERY PROJECT</h3>
-              <dl>
-                <dt>Owner:</dt>
-                <dd>Tick-TS</dd>
-                <dt>Design:</dt>
-                <dd>zigzag</dd>
-                <dt>Frontend:</dt>
-                <dd>Ionic, Angular, Tailwind</dd>
-                <dt>Backend:</dt>
-                <dd>Java</dd>
-                <dt>Time:</dt>
-                <dd>??/2024–03/2025</dd>
-              </dl>
-              <p>
-                Advanced Angular 16 app written against a custom Java backend.
-                Can't talk about many details for this one; the main part was a
-                completely user-configured widget area. Custom Java Backend. I
-                contributed to the frontend and communicated with design.
-              </p>
-            </li>
-            <li>
-              <h3>nextmuseum.io</h3>
-              <dl>
-                <dt>Owner:</dt>
-                <dd>Museum Ulm, Kunststiftung NRW oder wie die heißen</dd>
-                <dt>Design:</dt>
-                <dd>Future Forms</dd>
-                <dt>Frontend:</dt>
-                <dd>Angular, Tailwind</dd>
-                <dt>Backend:</dt>
-                <dd>Supabase</dd>
-                <dt>Time:</dt>
-                <dd>10/2023–??/2024</dd>
-              </dl>
-              <p>
-                My first Angular project. It was open source on GitHub for a
-                while, but the owners took it private.
-              </p>
-            </li>
-            <li>
-              <h3>z-bau.com</h3>
-              <dl>
-                <dt>Owner:</dt>
-                <dd>Z-Bau</dd>
-                <dt>Design:</dt>
-                <dd>unfun</dd>
-                <dt>Frontend:</dt>
-                <dd>WordPress Template, CSS and Vanilla JS</dd>
-                <dt>Backend:</dt>
-                <dd>WordPress</dd>
-                <dt>Time:</dt>
-                <dd>2015–2024</dd>
-              </dl>
-              <p>
-                Love the brutalist design paying tribute to the Z-Bau as a
-                building. Maintained by me alone after my resignation from
-                unfun. Relaunched in 2025 by stefanendres.com and
-                menschmaschine.studio.
-              </p>
-            </li>
-            <li>
-              <h3>sophiaschulzmusic.com</h3>
-              <dl>
-                <dt>Owner:</dt>
-                <dd>Sophia Schulz</dd>
-                <dt>Design:</dt>
-                <dd>Complex Pleasures</dd>
-                <dt>Frontend:</dt>
-                <dd>WordPress Template, CSS and Vanilla JS</dd>
-                <dt>Backend:</dt>
-                <dd>WordPress</dd>
-                <dt>Time:</dt>
-                <dd>2023</dd>
-              </dl>
-              <p>Modern portfolio website for cellist Sophia Schulz</p>
-            </li>
-            <li>
-              <h3>emanueltannert.com</h3>
-              <p>Hey, I just made this website in 3 days. Cool, huh?</p>
-            </li>
-          </ol>
-        </div>
+        <h2><a href="javascript:toggle('projects');">Projects</a></h2>
+        <ol class="toggle-list">
+          <li>
+            <h3><a href="https://nextmuseum.io">nextmuseum.io</a></h3>
+            <img
+              src="screenshots/nextmuseum-desktop.webp"
+              alt="screenshot of nextmuseum.io"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>NRW-Forum Düsseldorf and Museum Ulm</dd>
+              <dt>Design:</dt>
+              <dd><a href="https://futureforms.studio">Future Forms</a></dd>
+              <dt>Frontend:</dt>
+              <dd>Angular, Tailwind</dd>
+              <dt>Backend:</dt>
+              <dd>Supabase</dd>
+              <dt>Time:</dt>
+              <dd>2023&ndash;2024</dd>
+            </dl>
+          </li>
+          <li>
+            <h3>MYSTERY FINTECH PROJECT (under NDA)</h3>
+            <dl>
+              <dt>Owner:</dt>
+              <dd>[redacted]</dd>
+              <dt>Frontend:</dt>
+              <dd>Ionic, Angular, Tailwind</dd>
+              <dt>Backend:</dt>
+              <dd>Java</dd>
+              <dt>Time:</dt>
+              <dd>2024&ndash;2025</dd>
+            </dl>
+            <p>
+              Advanced Angular 16 app in the fintech industry. All the main
+              functionalities were housed in live-data-fed widgets that users
+              could arrange freely on a canvas. Widget types included charts,
+              stock portfolios and other potentially long, virtualized lists. I
+              implemented the data import from the previous, non-web version of
+              the app, among other things.
+            </p>
+          </li>
+          <li>
+            <h3>
+              <a href="https://sophiaschulzmusic.com">sophiaschulzmusic.com</a>
+            </h3>
+            <img
+              loading="lazy"
+              src="screenshots/sophiaschulz-desktop.webp"
+              alt="screenshot of sophiaschulzmusic.com"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>Sophia Schulz</dd>
+              <dt>Design:</dt>
+              <dd>
+                <a href="https://complexpleasures.com">Complex Pleasures</a>
+              </dd>
+              <dt>Technology:</dt>
+              <dd>WordPress Theme &ndash; PHP, HTML, CSS and Vanilla JS</dd>
+              <dt>Time:</dt>
+              <dd>2023</dd>
+            </dl>
+          </li>
+          <li>
+            <h3><a href="https://holzingerurbat.de">holzingerurbat.de</a></h3>
+            <img
+              loading="lazy"
+              src="screenshots/holzingerurbat-desktop.webp"
+              alt="screenshot of holzingerurbat.de"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>HOLZINGERurbat</dd>
+              <dt>Design:</dt>
+              <dd>HOLZINGERurbat / brose</dd>
+              <dt>Technology:</dt>
+              <dd>WordPress Theme</dd>
+              <dt>Time:</dt>
+              <dd>2021</dd>
+            </dl>
+            <p>
+              HOLZINGERurbat's website is a work of art in its own right. The
+              design mirrors that of mechatronics company brose's site. It is
+              part of the collection of Kunstpalais Erlangen.
+            </p>
+          </li>
+          <li>
+            <h3>
+              <a href="https://leonardo-zentrum.de">leonardo-zentrum.de</a>
+            </h3>
+            <img
+              loading="lazy"
+              src="screenshots/leonardo-desktop.webp"
+              alt="screenshot of leonardo-zentrum.de"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>Leonardo &ndash; Zentrum für Kreativität und Innovation</dd>
+              <dt>Design:</dt>
+              <dd>Philipp Stöcklein</dd>
+              <dt>Technology:</dt>
+              <dd>WordPress</dd>
+              <dt>Time:</dt>
+              <dd>2021</dd>
+            </dl>
+          </li>
+          <li>
+            <h3>
+              <a href="https://ifz.me">ifz.me</a>
+            </h3>
+            <img
+              loading="lazy"
+              src="screenshots/ifz-desktop.webp"
+              alt="screenshot of ifz.me"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>Institut für Zukunft</dd>
+              <dt>Design:</dt>
+              <dd>unfun</dd>
+              <dt>Technology:</dt>
+              <dd>WordPress, WebGL</dd>
+              <dt>Time:</dt>
+              <dd>2017</dd>
+            </dl>
+            <p>
+              IfZ was a progressive techno club in Leipzig. For the background
+              animation, I hand coded a "black hole" WebGL shader that moves
+              with the mouse pointer/device tilt.
+            </p>
+          </li>
+          <li>
+            <h3>
+              <a href="https://baum-kappler.com">baum-kappler.com</a>
+            </h3>
+            <img
+              loading="lazy"
+              src="screenshots/baumkappler-desktop.webp"
+              alt="screenshot of baum-kappler.com"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>baum-kappler architekten</dd>
+              <dt>Design:</dt>
+              <dd>unfun</dd>
+              <dt>Technology:</dt>
+              <dd>WordPress</dd>
+              <dt>Time:</dt>
+              <dd>2019</dd>
+            </dl>
+          </li>
+          <li>
+            <h3>
+              <a href="https://unfun.de">unfun.de</a>
+            </h3>
+            <img
+              loading="lazy"
+              src="screenshots/unfun-desktop.webp"
+              alt="screenshot of unfun.de"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>unfun</dd>
+              <dt>Design:</dt>
+              <dd>unfun</dd>
+              <dt>Technology:</dt>
+              <dd>WordPress</dd>
+              <dt>Time:</dt>
+              <dd>2018</dd>
+            </dl>
+          </li>
+          <li>
+            <h3>
+              <a href="https://susannewohlfart.de">susannewohlfart.de</a>
+            </h3>
+            <img
+              loading="lazy"
+              src="screenshots/susannewohlfart-desktop.webp"
+              alt="screenshot of susannewohlfart.de"
+            />
+            <dl>
+              <dt>Owner:</dt>
+              <dd>Susanne Wohlfart</dd>
+              <dt>Design:</dt>
+              <dd>Susanne Wohlfart</dd>
+              <dt>Technology:</dt>
+              <dd>WordPress</dd>
+              <dt>Time:</dt>
+              <dd>2015</dd>
+            </dl>
+          </li>
+        </ol>
+        <p>
+          <a class="toggle-link" href="javascript:toggle('projects');"
+            >[<span>&hellip;</span><span>show less</span>]</a
+          >
+        </p>
       </section>
-      <section id="cv">
-        <div class="body"></div>
+      <section id="experience">
+        <h2><a href="javascript:toggle('experience');">Experience</a></h2>
+        <ul class="square-list toggle-list">
+          <li>
+            <h3>
+              User Experience Engineer, Future Forms, Stuttgart &mdash;
+              2023&ndash;2025
+            </h3>
+            <ul class="circle-list sub-list">
+              <li>
+                Development of modular Angular Apps in an agile environment
+              </li>
+              <li>Implementation of features based on figma designs</li>
+              <li>Code reviews and architecture decisions in the team</li>
+              <li>Sprint planning, refinement, and time estimations</li>
+              <li>Close collaboration with design and backend teams</li>
+            </ul>
+          </li>
+          <li>
+            <h3>
+              System Administrator, Nuremberg Tech &mdash; 2021&ndash;2022
+            </h3>
+            <ul class="circle-list sub-list">
+              <li>
+                Administration of Ubuntu VMs for Java and PHP Applications
+              </li>
+              <li>
+                Secure hosting with nginx, Apache, php-fpm, MariaDB and
+                PostgreSQL
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>Web Developer, unfun, Nürnberg &mdash; 2015&ndash;2019</h3>
+            <ul class="circle-list sub-list">
+              <li>Development of interactive, responsive Websites and Apps</li>
+              <li>React, JavaScript, WebGL / Three.js, WordPress, Node.js</li>
+            </ul>
+          </li>
+          <li>
+            <h3>
+              Freelance Web Developer, Nürnberg &mdash; 2010&ndash;2013 +
+              2019&ndash;2023
+            </h3>
+            <p>
+              Client projects in collaboration with various independent
+              designers.
+            </p>
+          </li>
+        </ul>
+        <p>
+          <a class="toggle-link" href="javascript:toggle('experience');"
+            >[<span>&hellip;</span><span>show less</span>]</a
+          >
+        </p>
       </section>
-      <section id="contact">
-        <div class="body">
-          <p>Please email me at <a>hi (at) emanueltannert (dot) com</a></p>
-        </div>
+      <section id="cta-bottom">
+        <p>
+          <b
+            >Questions, inquiries, praise, or just say hi? Email me at
+            <a href="mailto:post@etannert.de">post@etannert.de</a>.</b
+          >
+        </p>
       </section>
       <section id="legal">
-        <div class="body">
-          <p>
-            Emanuel Tannert<br />
-            Schreyerstraße 23<br />
-            90443 Nürnberg
-          </p>
-        </div>
+        <address>Emanuel Tannert, Schreyerstraße 23, 90443 Nürnberg</address>
       </section>
     </main>
+    <script>
+      function toggle(sectionId) {
+        var section = document.querySelector("#" + sectionId);
+        section.classList.toggle("toggle-on");
+      }
+      document.documentElement.classList.remove("no-js");
+    </script>
   </body>
 </html>
