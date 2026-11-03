@@ -1,0 +1,8 @@
+deploy-excludes.txt
+deploy.sh
+README.txt
+learning-java/
+.git/
+.gitignore
+.DS_Store
+screenshots/compress.pl
